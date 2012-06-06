@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Мир через видоискатель</title>
-<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="styles/styles.css" />
 </head>
 <?php
 $db = mysql_connect("localhost", "root", "106") or die(mysql_error());
@@ -16,17 +16,24 @@ mysql_select_db("blog",$db) or die(mysql_error());
 <div class="wrapper">
 <div class="header"></div>
 
-
-<div class="content"><br />
-<form action="" method="post" name="signin">
-<ul class="regist">
-	<li><label> Login <input type="text" name="Login" value="Введите логин" />
-	</label></li>
-	<li><label> Password <input type="password" name="pass" /> </label></li>
-	<li><input type="submit" name="Submit" value="Регистрация" /></li>
-    <li><a href="index.php"> Вернуться на гланвную страницу </a></li>
- </ul>
-</form>
+<div class="content">
+	<form action="" method="post" name="signin">
+		<ul class="registration">
+			<li>
+            	<label> Login <input type="text" name="Login" value="Введите логин" />
+				</label>
+            </li>
+			<li>
+            	<label> Password <input type="password" name="pass" /> </label>
+            </li>
+			<li class="button_reg">
+            	<input type="submit" name="Submit" value="Регистрация" />
+            </li>
+    		<li>
+            	<a href="index.php"> Вернуться на гланвную страницу </a>
+             </li>
+ 		</ul>
+	</form>
 <?php if(isset($_POST["Submit"])) {
 	if((trim($_POST["Login"])!="")&(trim($_POST["pass"])!='')){
 		$result = mysql_query("SELECT u.id, u.name FROM blog_users u ") or die(mysql_error());

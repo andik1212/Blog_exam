@@ -43,8 +43,9 @@ a:hover  { text-decoration:none; }
 	.send_coment { width:800px; margin-left:100px; margin-top:20px; overflow:hidden;}
 	.send_coment textarea { resize:none; width:780px; height:100px; padding:5px 10px; margin-bottom:10px;}
 	.send_coment input { float:right;}
-
-/* SIDEBAR */
+	.registration { width:610px; text-align:right;}
+	.button_reg { margin-right:35px}
+	.registration li { border:none !important; box-shadow:none !important;}
 
 /* FOOTER */
 .footer { background:url(../images/footer.jpg) no-repeat center; height:41px; padding-top:250px}
