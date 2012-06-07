@@ -35,7 +35,7 @@ a:hover  { text-decoration:none; }
 	.new_post textarea { width:960px; resize:none; margin-bottom:10px; padding:5px 10px; font-size:14px; height:100px;}
 	.new_post input { margin-left:840px}
 	.old_post { display:block; padding:5px 10px; }
-	.old_post li {text-align:justify;}
+	.old_post li {text-align:justify; overflow:hidden;}
 		.comentu { width:800px; margin-left:100px; margin-top:10px;}
 		.comentu li { margin-bottom:10px;}
 		.name { font-size:14px; font-weight:bold;}
@@ -46,6 +46,9 @@ a:hover  { text-decoration:none; }
 	.registration { width:610px; text-align:right;}
 	.button_reg { margin-right:35px}
 	.registration li { border:none !important; box-shadow:none !important;}
+	.back { display:block; float:right;  margin:10px 0; height:15px; border:1px solid #000; background:#FFF; padding:5px 5px; border-radius:3px}
+	.back:hover { color:#fff; background:#000;}
+	.none { float:none; margin:0;}
 
 /* FOOTER */
 .footer { background:url(../images/footer.jpg) no-repeat center; height:41px; padding-top:250px}

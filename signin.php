@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="styles/styles.css" />
 </head>
 <?php
+session_start();
 $db = mysql_connect("localhost", "root", "106") or die(mysql_error());
 //$db = mysql_connect("database", "andik128", "Ttm7mZj9") or die(mysql_error());
 //mysql_select_db("andik128",$db) or die(mysql_error());

@@ -92,21 +92,20 @@ if(isset($_POST["post_submit"])){
         </div>  
     <?php } ?>
  <?php 
-$result = mysql_query("SELECT p.id, p.post FROM blog_posts p ORDER BY id DESC") or die(mysql_error());
+$result = mysql_query("SELECT p.post FROM blog_posts p WHERE p.id=".$_GET["id"]) or die(mysql_error());
 
-while ($row=mysql_fetch_array($result)){ 
+$row=mysql_fetch_array($result);
 	?>       
         
         <ul class="old_post">
         	<li>
             	<p>
-                   <?php echo substr($row["post"], 0, 300)."... "; ?>
-                   <a href="post.php?id=<?php echo $row['id']; ?>" class="back"> читать далее </a>
+                   <?php echo $row["post"]; ?>
                 </p>
 
                 <ul class="comentu">
 					<?php 
-						$resultc = mysql_query("SELECT c.user_id, c.id, c.comment FROM blog_comment c WHERE post_id=".$row["id"]) or die(mysql_error());
+						$resultc = mysql_query("SELECT c.user_id, c.id, c.comment FROM blog_comment c WHERE post_id=".$_GET["id"]) or die(mysql_error());
 						while ($rowc=mysql_fetch_array($resultc)){
 							$resultn=mysql_query("SELECT name FROM blog_users WHERE id=".$rowc["user_id"]);
 							$rown=mysql_fetch_array($resultn);
@@ -126,14 +125,16 @@ while ($row=mysql_fetch_array($result)){
                <div class="send_coment">
                <form action="" method="post" name="comment">
                		<textarea name="comment" rows="1" cols="1"></textarea>
-               		<input type="hidden" name="post_id" value="<?php echo $row['id'];?>" />
+               		<input type="hidden" name="post_id" value="<?php echo $_GET['id'];?>" />
                     <input type="submit" name="com_submit" value="Комментировать" class="" />
                </form>	
                </div>
                <?php }?>
+               <a href="index.php" class="back">на главную страницу</a>
             </li>
+            
         </ul>
-<?php }?>
+
         
         
         
